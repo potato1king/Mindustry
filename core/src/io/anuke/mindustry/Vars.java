@@ -46,8 +46,8 @@ public class Vars{
     public static final float unlockResourceScaling = 1.5f;
     public static final int maxTextLength = 150;
     public static final int maxNameLength = 40;
-    public static final float itemSize = 5f;
-    public static final int tilesize = 8;
+    public static final float itemSize = 10f;
+    public static final int tilesize = 16;
     public static final int sectorSize = 300;
     public static final int mapPadding = 3;
     public static final int invalidSector = Integer.MAX_VALUE;
@@ -180,6 +180,6 @@ public class Vars{
         }
 
         fontScale = Math.max(Unit.dp.scl(1f) / 2f, 0.5f);
-        baseCameraScale = Math.round(Unit.dp.scl(4));
+        baseCameraScale = Math.round(Unit.dp.scl(2));
     }
 }

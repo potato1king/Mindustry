@@ -83,19 +83,23 @@ public class Floor extends Block{
 
                 TextureRegion result = new TextureRegion();
 
-                int sx = -dx * 8 + 2, sy = -dy * 8 + 2;
-                int x = Mathf.clamp(sx, 0, 12);
-                int y = Mathf.clamp(sy, 0, 12);
-                int w = Mathf.clamp(sx + 8, 0, 12) - x, h = Mathf.clamp(sy + 8, 0, 12) - y;
+                int padSize = 4*2;
+                int texSize = 8*2;
+                int totSize = padSize + texSize;
 
-                float rx = Mathf.clamp(dx * 8, 0, 8 - w);
-                float ry = Mathf.clamp(dy * 8, 0, 8 - h);
+                int sx = -dx * texSize + padSize/2, sy = -dy * texSize + padSize;
+                int x = Mathf.clamp(sx, 0, totSize);
+                int y = Mathf.clamp(sy, 0, totSize);
+                int w = Mathf.clamp(sx + texSize, 0, totSize) - x, h = Mathf.clamp(sy + texSize, 0, totSize) - y;
+
+                float rx = Mathf.clamp(dx * texSize, 0, texSize - w);
+                float ry = Mathf.clamp(dy * texSize, 0, texSize - h);
 
                 result.setTexture(edgeRegion.getTexture());
                 result.setRegion(edgeRegion.getRegionX() + x, edgeRegion.getRegionY() + y + h, w, -h);
 
                 edgeRegions[i] = result;
-                offsets[i] = new Vector2(-4 + rx, -4 + ry);
+                offsets[i] = new Vector2(-padSize + rx, -padSize + ry);
             }
 
             cliffRegions = new TextureRegion[4];

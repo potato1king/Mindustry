@@ -491,7 +491,7 @@ public class Renderer extends RendererModule{
 
     public void clampScale(){
         float s = io.anuke.ucore.scene.ui.layout.Unit.dp.scl(1f);
-        targetscale = Mathf.clamp(targetscale, Math.round(s * 2), Math.round(s * 5));
+        targetscale = Mathf.clamp(targetscale, Math.round(s * 1), Math.round(s * 4));
     }
 
 }
