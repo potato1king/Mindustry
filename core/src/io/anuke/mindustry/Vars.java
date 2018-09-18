@@ -46,7 +46,7 @@ public class Vars{
     public static final float unlockResourceScaling = 1.5f;
     public static final int maxTextLength = 150;
     public static final int maxNameLength = 40;
-    public static final float itemSize = 10f;
+    public static final float itemSize = 8f;
     public static final int tilesize = 16;
     public static final int sectorSize = 300;
     public static final int mapPadding = 3;

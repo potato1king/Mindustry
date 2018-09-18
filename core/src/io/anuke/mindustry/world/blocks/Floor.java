@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.IntIntMap;
+import io.anuke.mindustry.Vars;
 import io.anuke.mindustry.content.StatusEffects;
 import io.anuke.mindustry.content.fx.BlockFx;
 import io.anuke.mindustry.type.Liquid;
@@ -83,8 +84,8 @@ public class Floor extends Block{
 
                 TextureRegion result = new TextureRegion();
 
-                int padSize = 4*2;
-                int texSize = 8*2;
+                int padSize = Vars.tilesize/2;
+                int texSize = Vars.tilesize;
                 int totSize = padSize + texSize;
 
                 int sx = -dx * texSize + padSize/2, sy = -dy * texSize + padSize;
