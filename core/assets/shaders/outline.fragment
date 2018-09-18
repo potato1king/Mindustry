@@ -20,8 +20,17 @@ void main() {
 
 	gl_FragColor = mix(c * v_color, u_color,
 	        (1.0-step(0.1, texture2D(u_texture, v_texCoord.xy).a)) *
-	        step(0.1, texture2D(u_texture, v_texCoord.xy + vec2(0, SPACE) * v).a +
+	        step(0.1,
+	                texture2D(u_texture, v_texCoord.xy + vec2(0, SPACE) * v).a +
 	                texture2D(u_texture, v_texCoord.xy + vec2(0, -SPACE) * v).a +
 	                texture2D(u_texture, v_texCoord.xy + vec2(SPACE, 0) * v).a +
-	                texture2D(u_texture, v_texCoord.xy + vec2(-SPACE, 0) * v).a));
+	                texture2D(u_texture, v_texCoord.xy + vec2(-SPACE, 0) * v).a +
+                        texture2D(u_texture, v_texCoord.xy + vec2(SPACE, SPACE) * v).a +
+                        texture2D(u_texture, v_texCoord.xy + vec2(-SPACE, -SPACE) * v).a +
+                        texture2D(u_texture, v_texCoord.xy + vec2(SPACE, -SPACE) * v).a +
+                        texture2D(u_texture, v_texCoord.xy + vec2(-SPACE, SPACE) * v).a +
+                            texture2D(u_texture, v_texCoord.xy + vec2(0, SPACE*2.0) * v).a +
+                            texture2D(u_texture, v_texCoord.xy + vec2(0, -SPACE*2.0) * v).a +
+                            texture2D(u_texture, v_texCoord.xy + vec2(SPACE*2.0, 0) * v).a +
+                            texture2D(u_texture, v_texCoord.xy + vec2(-SPACE*2.0, 0) * v).a));
 }
